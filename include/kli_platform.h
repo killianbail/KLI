@@ -17,8 +17,9 @@ extern "C" {
 /**
  * @brief KLI output function, must be implemented by user.
  * @param string Pointer to a null terminated string.
+ * @param length Length of the string without null termination.
  */
-void kli_out(const char *string);
+void kli_out(const char *string, int length);
 
 #ifdef __cplusplus
 }

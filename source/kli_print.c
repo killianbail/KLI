@@ -45,6 +45,6 @@ void kli_print(const char *format, ...) {
 }
 
 void kli_flush(void) {
-    kli_out(string);
+    kli_out(string, size);
     size = 0;
 }
