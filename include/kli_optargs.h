@@ -79,7 +79,7 @@ bool kli_optargs(const KliOption options[], const KliArgument arguments[], int a
  * @return True if the option was found during parsing, false otherwise.
  * @note Must be called inside command handler.
  */
-bool cli_get_opt(int index, char **optv);
+bool kli_get_opt(int index, char **optv);
 
 /**
  * @brief Called by user to get parsed argument.
@@ -88,7 +88,7 @@ bool cli_get_opt(int index, char **optv);
  * @return True if the argument was found during parsing, false otherwise.
  * @note Must be called inside command handler.
  */
-bool cli_get_arg(int index, char **argv);
+bool kli_get_arg(int index, char **argv);
 
 #ifdef __cplusplus
 }

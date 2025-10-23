@@ -165,7 +165,7 @@ bool kli_optargs(const KliOption options[], const KliArgument arguments[], int a
     return true;
 }
 
-bool cli_get_opt(int opti, char **optv) {
+bool kli_get_opt(int opti, char **optv) {
 
     // Option was not found
     if(!optFound[opti])
@@ -181,7 +181,7 @@ bool cli_get_opt(int opti, char **optv) {
     return true;
 }
 
-bool cli_get_arg(int argi, char **argv) {
+bool kli_get_arg(int argi, char **argv) {
     
     // Argument was not found
     if(!argFound[argi])
