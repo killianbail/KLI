@@ -12,7 +12,7 @@
 #include "kli_parse.h"
 #include "kli_config.h"
 
-// Definitions
+// Implementations
 
 int kli_parse_line(char *line, char **argv) {
     int argc = 0;

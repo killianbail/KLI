@@ -52,7 +52,7 @@ static const KliCommand * topTable      = NULL;
 static char command[KLI_MAX_LINE_SIZE]  = {0};
 static size_t commandEndIndex           = 0;
 
-// Definitions
+// Implementations
 
 void kli_dispatch(const KliCommand table[], int argc, char **argv) {
     

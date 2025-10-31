@@ -19,7 +19,7 @@
 static char string[KLI_MAX_PRINT_SIZE] = {0};
 static int size = 0;
 
-// Definitions
+// Implementations
 
 void kli_print(const char *format, ...) {
 

@@ -45,7 +45,7 @@ static inline bool is_short_option(const char *string);
  */
 static inline bool is_long_option(const char *string);
 
-// Definitions
+// Implementations
 
 bool kli_optargs(const KliOption options[], const KliArgument arguments[], int argc, char **argv) {
 
