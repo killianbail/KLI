@@ -19,7 +19,7 @@ extern "C" {
 // Definitions
 
 #define KLI_BEGIN_COMMAND_TABLE(name)                                           const KliCommand name[] = {
-#define KLI_ADD_COMMAND_SUBTABLE(name, description, subcommand)                 {name, description, subcommand, NULL, NULL, NULL},
+#define KLI_ADD_SUBCOMMAND_TABLE(name, description, subcommand)                 {name, description, subcommand, NULL, NULL, NULL},
 #define KLI_ADD_COMMAND_HANDLER(name, description, options, arguments, handler) {name, description, NULL, options, arguments, handler},
 #define KLI_END_COMMAND_TABLE                                                   {NULL, NULL, NULL, NULL, NULL, NULL}};
 #define KLI_EXPORT_COMMAND_TABLE(name)                                          extern const KliCommand name[]
