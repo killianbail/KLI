@@ -19,11 +19,51 @@ extern "C" {
 
 // Definitions
 
+
+/**
+ * @brief Macro to define an option table.
+ * @param name Name of the option table.
+ * @note Each option table must be terminated with KLI_END_OPTION_TABLE.
+ */
 #define KLI_BEGIN_OPTION_TABLE(name)                            const KliOption name[] = {
+
+/**
+ * @brief Macro to add an option entry to the current table.
+ * @param shortName Short name of the option. Use 0 if no short name is needed.
+ * @param longName Long name of the option. Use NULL if no long name is needed.
+ * @param argc Number of expected arguments for this option.
+ * @param description Description of the option as a null terminated string.
+ * @note Option names must not contain spaces.
+ */
 #define KLI_ADD_OPTION(shortName, longName, argc, description)  {shortName, longName, argc, description},
+
+/**
+ * @brief Macro to end the current option table.
+ * @note Must be used to terminate each option table.
+ * @note The terminating entry is filled with 0 and NULL values.
+ */
 #define KLI_END_OPTION_TABLE                                    {0, NULL, 0, NULL}};
+
+/**
+ * @brief Macro to define an argument table.
+ * @param name Name of the argument table.
+ * @note Each argument table must be terminated with KLI_END_ARGUMENT_TABLE.
+ */
 #define KLI_BEGIN_ARGUMENT_TABLE(name)                          const KliArgument name[] = {
+
+/**
+ * @brief Macro to add an argument entry to the current table.
+ * @param name Name of the argument as a null terminated string.
+ * @param description Description of the argument as a null terminated string.
+ * @note Argument names must not contain spaces.
+ */
 #define KLI_ADD_ARGUMENT(name, description)                     {name, description},
+
+/**
+ * @brief Macro to end the current argument table.
+ * @note Must be used to terminate each argument table.
+ * @note The terminating entry is filled with NULL values.
+ */
 #define KLI_END_ARGUMENT_TABLE                                  {NULL, NULL}};
 
 // Structures

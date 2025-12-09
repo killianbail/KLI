@@ -18,10 +18,48 @@ extern "C" {
 
 // Definitions
 
+/**
+ * @brief Macros to define command tables.
+ * @param name Name of the command table.
+ * @note Each command table must be terminated with KLI_END_COMMAND_TABLE.
+ * @note Use KLI_EXPORT_COMMAND_TABLE to declare external command tables.
+ */
 #define KLI_BEGIN_COMMAND_TABLE(name)                                           const KliCommand name[] = {
+
+/**
+ * @brief Macros to add a subcommand entry to the current table.
+ * @param name Name of the subcommand as a null terminated string.
+ * @param description Description of the subcommand as a null terminated string.
+ * @param subcommand Pointer to the subcommand table.
+ * @note Subcommands take precedence over command handlers.
+ * @note Command name must not contain spaces.
+ */
 #define KLI_ADD_SUBCOMMAND_TABLE(name, description, subcommand)                 {name, description, subcommand, NULL, NULL, NULL},
+
+/**
+ * @brief Macros to add a command handler entry to the current table.
+ * @param name Name of the command as a null terminated string.
+ * @param description Description of the command as a null terminated string.
+ * @param options Pointer to the options table.
+ * @param arguments Pointer to the positional arguments table.
+ * @param handler Pointer to the command handler function.
+ * @note Options and arguments can be set to NULL if not needed.
+ * @note Command name must not contain spaces.
+ */
 #define KLI_ADD_COMMAND_HANDLER(name, description, options, arguments, handler) {name, description, NULL, options, arguments, handler},
+
+/**
+ * @brief Macros to end the current command table.
+ * @note Must be used to terminate each command table.
+ * @note The terminating entry is filled with NULL values.
+ */
 #define KLI_END_COMMAND_TABLE                                                   {NULL, NULL, NULL, NULL, NULL, NULL}};
+
+/**
+ * @brief Macros to declare an external command table.
+ * @param name Name of the command table.
+ * @note Use this macro in header files to declare command tables defined elsewhere.
+ */
 #define KLI_EXPORT_COMMAND_TABLE(name)                                          extern const KliCommand name[]
 
 // Structures

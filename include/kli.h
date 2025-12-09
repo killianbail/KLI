@@ -3,6 +3,7 @@
  * @author Killian Baillifard
  * @date 23.10.2025
  * @brief KLI library.
+ * @copyright Copyright (c) 2025, Killian Baillifard, Licensed under the MIT License. See the LICENSE file in the project root for full license information.
  */
 
 #ifndef KLI_H
