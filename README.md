@@ -92,11 +92,11 @@ Once the program is compiled, a set of functions will handle the command routing
 
 Here is a full example with the following commands :
 - `echo <echo options (1)>`
-- `math`
-    - `add <math arguments (2)>`
-    - `sub <math arguments (2)>`
-    - `mul <math arguments (2)>`
-    - `div <math arguments (2)>`
+- `math add <math arguments (2)>`
+- `math sub <math arguments (2)>`
+- `math mul <math arguments (2)>`
+- `math div <math arguments (2)>`
+- `todo`
 
 ```c
 #include <stdbool.h>
