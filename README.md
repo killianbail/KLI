@@ -121,10 +121,10 @@ static const char *math_div_handler(void);
 // Declare math commands table
 
 KLI_BEGIN_COMMAND_TABLE(MATH_COMMANDS)
-KLI_ADD_SUBCOMMAND_TABLE("add", "Compute a + b", NULL, MATH_ARGUMENTS, math_add_handler)
-KLI_ADD_SUBCOMMAND_TABLE("sub", "Compute a - b", NULL, MATH_ARGUMENTS, math_sub_handler)
-KLI_ADD_SUBCOMMAND_TABLE("mul", "Compute a * b", NULL, MATH_ARGUMENTS, math_mul_handler)
-KLI_ADD_SUBCOMMAND_TABLE("div", "Compute a / b", NULL, MATH_ARGUMENTS, math_div_handler)
+KLI_ADD_COMMAND_HANDLER("add", "Compute a + b", NULL, MATH_ARGUMENTS, math_add_handler)
+KLI_ADD_COMMAND_HANDLER("sub", "Compute a - b", NULL, MATH_ARGUMENTS, math_sub_handler)
+KLI_ADD_COMMAND_HANDLER("mul", "Compute a * b", NULL, MATH_ARGUMENTS, math_mul_handler)
+KLI_ADD_COMMAND_HANDLER("div", "Compute a / b", NULL, MATH_ARGUMENTS, math_div_handler)
 KLI_END_COMMAND_TABLE
 
 // Decalre echo options table
@@ -140,9 +140,9 @@ static const char *echo_handler(void);
 // Declare top level commands table
 
 KLI_BEGIN_COMMAND_TABLE(COMMANDS)
-KLI_ADD_SUBCOMMAND_TABLE("echo", "Exemple handler.", ECHO_OPTION, NULL, echo_handler)
-KLI_ADD_COMMAND_SUBTABLE("math", "Motor control and display commands.", MATH_COMMANDS)
-KLI_ADD_SUBCOMMAND_TABLE("todo", "Not implemented yet.", NULL, NULL, NULL)
+KLI_ADD_COMMAND_HANDLER("echo", "Exemple handler.", ECHO_OPTION, NULL, echo_handler)
+KLI_ADD_SUBCOMMAND_TABLE("math", "Motor control and display commands.", MATH_COMMANDS)
+KLI_ADD_COMMAND_HANDLER("todo", "Not implemented yet.", NULL, NULL, NULL)
 KLI_END_COMMAND_TABLE
 
 // Program entry point
