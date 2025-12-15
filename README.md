@@ -73,8 +73,11 @@ The `KLI_ADD_COMMAND_HANDLER` macro takes as final argument a function pointer o
 ### Functions
 
 Once the program is compiled, a set of functions will handle the command routing and the argument parsing :
-- [kli_dispatch.h](./include/kli_dispatch.h)
+- [kli_parse.h](./include/kli_parse.h)
     - `kli_parse_line` which tokenize an input string into `argc` and `argv`.
+    - `kli_parse_long` can be used to parse integer values from strings.
+    - `kli_parse_float` can be used to parse floating point values from strings.
+- [kli_dispatch.h](./include/kli_dispatch.h)
     - `kli_dispatch` which route `argc` and `argv` through the previously defined **command**, **argument** and **option** tables.
 - [kli_optargs.h](./include/kli_optargs.h)
     - `kli_get_opt`, return `true` if the option at the given `index` of the option table was found, and write the value in `argv`.
@@ -82,9 +85,6 @@ Once the program is compiled, a set of functions will handle the command routing
 - [kli_print.h](./include/kli_print.h)
     - `kli_print` which format and add text to the output buffer.
     - `kli_flush` which flush the whole output buffer to the standard output, to be implemented by `kli_out` with the signature defined in [kli_platform.h](./include/kli_platform.h).
-- [kli_parse.h](./include/kli_parse.h)
-    - `kli_parse_long` can be used to parse integer values from strings.
-    - `kli_parse_float` can be used to parse floating point values from strings.
 
 ## Example
 
