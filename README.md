@@ -185,7 +185,7 @@ static const char *math_parse_operands(float *a, float *b) {
 
     // Get arguments
     char *aString = NULL, *bString = NULL;
-    if(!kli_get_arg(0, &aString) || !kli_get_arg(0, &bString))
+    if(!kli_get_arg(0, &aString) || !kli_get_arg(1, &bString))
         return "Missing operands";
     
     // Parse arguments
