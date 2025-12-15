@@ -123,8 +123,8 @@ static const char *math_div_handler(void);
 KLI_BEGIN_COMMAND_TABLE(MATH_COMMANDS)
 KLI_ADD_SUBCOMMAND_TABLE("add", "Compute a + b", NULL, MATH_ARGUMENTS, math_add_handler)
 KLI_ADD_SUBCOMMAND_TABLE("sub", "Compute a - b", NULL, MATH_ARGUMENTS, math_sub_handler)
-KLI_ADD_SUBCOMMAND_TABLE("add", "Compute a * b", NULL, MATH_ARGUMENTS, math_mul_handler)
-KLI_ADD_SUBCOMMAND_TABLE("add", "Compute a / b", NULL, MATH_ARGUMENTS, math_div_handler)
+KLI_ADD_SUBCOMMAND_TABLE("mul", "Compute a * b", NULL, MATH_ARGUMENTS, math_mul_handler)
+KLI_ADD_SUBCOMMAND_TABLE("div", "Compute a / b", NULL, MATH_ARGUMENTS, math_div_handler)
 KLI_END_COMMAND_TABLE
 
 // Decalre echo options table
@@ -275,8 +275,8 @@ Output of the previous implementation look as follows :
 
         math add <argument(s)> - Compute a + b
         math sub <argument(s)> - Compute a - b
-        math add <argument(s)> - Compute a * b
-        math add <argument(s)> - Compute a / b
+        math mul <argument(s)> - Compute a * b
+        math div <argument(s)> - Compute a / b
 
 >
 ```
